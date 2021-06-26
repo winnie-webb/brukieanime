@@ -1,0 +1,36 @@
+.sidebar-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.widget-sidebar {
+  padding: 1rem;
+  margin: 0 1rem;
+  border-radius: $main-borderRadius;
+  background-color: $contrast-color;
+}
+.top10 {
+  &__heading {
+    color: $secondary-color;
+    margin-bottom: 1rem;
+  }
+  & li {
+    margin-bottom: 0.4rem;
+    font-size: 1.3rem;
+  }
+}
+.genres {
+  margin-top: 1rem;
+
+  &__heading {
+    margin-bottom: 1rem;
+    color: $secondary-color;
+  }
+  & ul {
+    display: grid;
+    gap: 1rem 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    & li {
+      font-size: 1.3rem;
+    }
+  }
+}
