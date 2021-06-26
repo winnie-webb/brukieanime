@@ -5,8 +5,7 @@
 body {
   background-color: #000;
   color: #bbbbbb;
-  overflow-x: hidden;
-  width: 90%; }
+  overflow-x: hidden; }
 
 a {
   text-decoration: none;
@@ -30,7 +29,7 @@ code {
 
 .anime-tab {
   position: relative;
-  width: 60%;
+  width: 55%;
   background-color: #1b1f22;
   border-radius: 0.8rem;
   min-height: 100vh;
@@ -138,10 +137,11 @@ code {
   flex-direction: column; }
 
 .widget-sidebar {
-  padding: 1rem;
+  padding: 1rem 2rem;
   margin: 0 1rem;
   border-radius: 0.8rem;
-  background-color: #1b1f22; }
+  background-color: #1b1f22;
+  width: 65%; }
 
 .top10__heading {
   color: #ffd32a;
