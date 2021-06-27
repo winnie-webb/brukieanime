@@ -3,4 +3,7 @@
 .home-widgets {
   display: flex;
   justify-content: center;
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
 }

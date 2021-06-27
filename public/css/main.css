@@ -34,6 +34,10 @@ code {
   border-radius: 0.8rem;
   min-height: 100vh;
   padding: 1rem; }
+  @media (max-width: 850px) {
+    .anime-tab {
+      width: 90%;
+      margin: 0 auto; } }
 
 .anime-tab__headingWrapper {
   display: flex;
@@ -45,6 +49,12 @@ code {
   border-radius: 0.8rem; }
   .anime-tab__headingWrapper a {
     color: #fff; }
+  @media (max-width: 550px) {
+    .anime-tab__headingWrapper {
+      flex-direction: column; } }
+
+.togglepage__wrapper {
+  margin-top: 1rem; }
 
 .anime-tab__animeTypes {
   display: flex; }
@@ -60,6 +70,9 @@ code {
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
   margin: 3rem auto; }
+  @media (max-width: 850px) {
+    .anime-tab__listWrapper {
+      grid-template-columns: repeat(7, 1fr); } }
 
 .anime-tab__list {
   margin: 0 1rem;
@@ -101,7 +114,6 @@ code {
   display: none; }
 
 .page-toggler {
-  display: inline-flex;
   background-color: gold;
   color: #000;
   padding: 0.3rem 0.8rem; }
@@ -135,13 +147,27 @@ code {
 .sidebar-wrapper {
   display: flex;
   flex-direction: column; }
+  @media (max-width: 850px) {
+    .sidebar-wrapper {
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 1rem; } }
+  @media (max-width: 620px) {
+    .sidebar-wrapper {
+      flex-direction: column; } }
 
 .widget-sidebar {
   padding: 1rem 2rem;
-  margin: 0 1rem;
+  margin-left: 1rem;
   border-radius: 0.8rem;
-  background-color: #1b1f22;
-  width: 65%; }
+  background-color: #1b1f22; }
+  @media (max-width: 850px) {
+    .widget-sidebar {
+      width: 40%;
+      margin: 1rem auto; } }
+  @media (max-width: 620px) {
+    .widget-sidebar {
+      width: 90%; } }
 
 .top10__heading {
   color: #ffd32a;
@@ -166,29 +192,29 @@ code {
 .home-widgets {
   display: flex;
   justify-content: center; }
+  @media (max-width: 850px) {
+    .home-widgets {
+      flex-direction: column; } }
 
 .header {
   display: flex;
-  height: 22rem;
-  position: relative; }
+  align-items: center;
+  justify-content: center;
+  height: 12rem; }
   .header__logo {
-    width: 25rem;
-    height: 25rem;
-    position: relative;
-    left: 6rem;
-    top: -7rem;
-    margin-right: 2rem; }
+    width: 25rem; }
+    @media (max-width: 550px) {
+      .header__logo {
+        width: 20rem; } }
 
 nav {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  height: 5rem;
-  position: absolute;
-  top: 12rem;
-  width: 100%;
+  justify-content: center;
   background-color: #141414;
-  padding-left: 8.7rem; }
+  padding: 1rem 0;
+  padding-right: 6rem;
+  margin-bottom: 3rem; }
   nav a {
     color: #fff;
     margin: 0 1rem;
@@ -196,9 +222,7 @@ nav {
     font-size: 1.35rem; }
 
 .search__barWrapper {
-  position: relative;
-  top: 4rem;
-  left: 3rem; }
+  position: relative; }
 
 .search__bar {
   padding: 1rem;
@@ -209,6 +233,11 @@ nav {
   background-color: rgba(58, 58, 58, 0.712);
   color: #fff;
   transition: border 0.6s; }
+  @media (max-width: 550px) {
+    .search__bar {
+      width: 0rem;
+      border: 0;
+      padding: 0; } }
   .search__bar:focus {
     border: 1px solid #27ae60; }
   .search__barIcon {
@@ -216,3 +245,10 @@ nav {
     position: absolute;
     right: 1rem;
     top: 0.7rem; }
+    @media (max-width: 550px) {
+      .search__barIcon {
+        position: relative;
+        top: 0;
+        right: 0;
+        padding: 1rem 2rem;
+        background-color: #3a3a3a; } }

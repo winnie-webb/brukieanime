@@ -5,6 +5,11 @@
   border-radius: $main-borderRadius;
   min-height: 100vh;
   padding: 1rem;
+
+  @media (max-width: 850px) {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 .anime-tab__headingWrapper {
   display: flex;
@@ -17,6 +22,12 @@
   & a {
     color: #fff;
   }
+  @media (max-width: 550px) {
+    flex-direction: column;
+  }
+}
+.togglepage__wrapper {
+  margin-top: 1rem;
 }
 .anime-tab__animeTypes {
   display: flex;
@@ -34,6 +45,9 @@
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
   margin: 3rem auto;
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(7, 1fr);
+  }
 }
 .anime-tab__list {
   margin: 0 1rem;
@@ -76,7 +90,6 @@
   display: none;
 }
 .page-toggler {
-  display: inline-flex;
   background-color: gold;
   color: #000;
   padding: 0.3rem 0.8rem;

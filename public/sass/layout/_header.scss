@@ -1,27 +1,19 @@
 .header {
-  display: flex;
-  height: 22rem;
-  position: relative;
-
+  @include flex-center;
+  height: 12rem;
   &__logo {
     width: 25rem;
-    height: 25rem;
-    position: relative;
-    left: 6rem;
-    top: -7rem;
-    margin-right: 2rem;
+    @media (max-width: 550px) {
+      width: 20rem;
+    }
   }
 }
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: 5rem;
-  position: absolute;
-  top: 12rem;
-  width: 100%;
+  @include flex-center;
   background-color: #141414;
-  padding-left: 8.7rem;
+  padding: 1rem 0;
+  padding-right: 6rem;
+  margin-bottom: 3rem;
   a {
     color: #fff;
     margin: 0 1rem;
@@ -29,11 +21,8 @@ nav {
     font-size: 1.35rem;
   }
 }
-
 .search__barWrapper {
   position: relative;
-  top: 4rem;
-  left: 3rem;
 }
 .search__bar {
   padding: 1rem;
@@ -45,6 +34,12 @@ nav {
   color: #fff;
   transition: border 0.6s;
 
+  @media (max-width: 550px) {
+    width: 0rem;
+    border: 0;
+    padding: 0;
+  }
+
   &:focus {
     border: 1px solid $main-color;
   }
@@ -53,5 +48,12 @@ nav {
     position: absolute;
     right: 1rem;
     top: 0.7rem;
+    @media (max-width: 550px) {
+      position: relative;
+      top: 0;
+      right: 0;
+      padding: 1rem 2rem;
+      background-color: rgb(58, 58, 58);
+    }
   }
 }
