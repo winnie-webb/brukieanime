@@ -11,14 +11,12 @@ router.get("/v1/updated", async (req, res) => {
   try {
     let pageQuery = req.query.page;
     if (!pageQuery) pageQuery = 1;
-    console.time("time");
     const recentReleases = await getRecentReleases(
       `${DB_URI}/updated`,
       pageQuery
     );
 
     res.send({ data: recentReleases });
-    console.timeEnd("time");
   } catch (err) {
     console.log(err.message);
   }
@@ -52,7 +50,6 @@ router.get("/v1/watch/:animeNameAndEpisode", async (req, res) => {
     const animeNameAndEpisode = req.params.animeNameAndEpisode;
     const url = `${DB_URI2}${animeNameAndEpisode}`;
     const watchStream = await getWatchStream(url);
-    console.log(watchStream);
     res.send({ watchStream });
   } catch (err) {
     console.error(err);

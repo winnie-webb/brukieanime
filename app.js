@@ -21,3 +21,5 @@ app.get("/watch/:animeName", (req, res) => {
 const apiRouter = require("./routes/api");
 app.use("/api", apiRouter);
 app.listen(port, () => console.log(`Server started on ${port} `));
+// 660px grid 3
+// 500px grid 2
