@@ -8,7 +8,14 @@
       />
     </a>
   </div>
-  <%- include("./searchbar.ejs") %>
+  <div class="header__widgets">
+    <%- include("./searchbar.ejs") %>
+    <div class="burger-menu">
+      <div class="burger-menu__stroke"></div>
+      <div class="burger-menu__stroke"></div>
+      <div class="burger-menu__stroke"></div>
+    </div>
+  </div>
 </header>
 
 <nav class="header__nav">
@@ -20,8 +27,3 @@
 
   <a id="" class="header__navLink" href="/"> Popular </a>
 </nav>
-<div class="burger-menu">
-  <div class="burger__stroke"></div>
-  <div class="burger__stroke"></div>
-  <div class="burger__stroke"></div>
-</div>
