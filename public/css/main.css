@@ -11,6 +11,9 @@ a {
   text-decoration: none;
   color: #bbbbbb; }
 
+.hidden {
+  display: none !important; }
+
 li {
   list-style: none;
   color: #fff; }
@@ -112,9 +115,6 @@ code {
   text-align: center;
   display: block;
   font-size: 1.4rem; }
-
-.hidden {
-  display: none; }
 
 .page-toggler {
   background-color: gold;
@@ -225,16 +225,17 @@ nav {
   padding-right: 6rem;
   margin-bottom: 3rem; }
   nav .header__navLink {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    color: #fff; }
     @media (max-width: 550px) {
       nav .header__navLink {
         margin-bottom: 1rem; } }
   nav a {
-    color: #fff;
     margin: 0 1rem;
     font-size: 1.35rem; }
   @media (max-width: 550px) {
     nav {
+      display: none;
       align-items: flex-start;
       flex-direction: column-reverse;
       padding-right: 0;
@@ -243,6 +244,18 @@ nav {
       top: 0;
       width: 100%;
       z-index: 5; } }
+
+.close-menu {
+  display: none;
+  cursor: pointer; }
+  .close-menu img {
+    position: absolute;
+    top: 2rem;
+    right: 5rem;
+    width: 3rem; }
+  @media (max-width: 550px) {
+    .close-menu {
+      display: block; } }
 
 .search__barWrapper {
   position: relative; }
@@ -258,9 +271,7 @@ nav {
   transition: border 0.6s; }
   @media (max-width: 550px) {
     .search__bar {
-      width: 0rem;
-      border: 0;
-      padding: 0; } }
+      display: none; } }
   .search__bar:focus {
     border: 1px solid #27ae60; }
   .search__barIcon {
@@ -284,11 +295,13 @@ nav {
       display: flex;
       background-color: #3a3a3a; } }
 
+.search__barCloseMenu {
+  width: 2rem; }
+
 .burger-menu {
   height: 5rem;
   width: 6rem;
   margin-left: 1rem;
-  margin-bottom: -2.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -309,6 +322,7 @@ nav {
   position: absolute;
   top: 3rem;
   background-color: #141414;
+  color: #bbbbbb;
   padding: 2rem;
   z-index: 2;
   text-transform: capitalize; }

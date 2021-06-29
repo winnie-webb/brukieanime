@@ -12,7 +12,9 @@ a {
   text-decoration: none;
   color: $main-textColor;
 }
-
+.hidden {
+  display: none !important;
+}
 li {
   list-style: none;
   color: #fff;
