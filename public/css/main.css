@@ -216,6 +216,7 @@ code {
     justify-content: center; }
 
 nav {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -223,11 +224,25 @@ nav {
   padding: 1rem 0;
   padding-right: 6rem;
   margin-bottom: 3rem; }
+  nav .header__navLink {
+    text-transform: uppercase; }
+    @media (max-width: 550px) {
+      nav .header__navLink {
+        margin-bottom: 1rem; } }
   nav a {
     color: #fff;
     margin: 0 1rem;
-    text-transform: uppercase;
     font-size: 1.35rem; }
+  @media (max-width: 550px) {
+    nav {
+      align-items: flex-start;
+      flex-direction: column-reverse;
+      padding-right: 0;
+      padding-left: 2rem;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 5; } }
 
 .search__barWrapper {
   position: relative; }
@@ -288,3 +303,31 @@ nav {
   @media (max-width: 550px) {
     .burger-menu {
       display: flex; } }
+
+.genre-top {
+  display: none;
+  position: absolute;
+  top: 3rem;
+  background-color: #141414;
+  padding: 2rem;
+  z-index: 2;
+  text-transform: capitalize; }
+  .genre-top ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    color: #bbbbbb; }
+    .genre-top ul a:hover {
+      color: #ffd32a; }
+  @media (max-width: 550px) {
+    .genre-top {
+      display: block;
+      position: static; } }
+
+#genre-link {
+  cursor: pointer; }
+  #genre-link:hover {
+    color: #ffd32a; }
+    #genre-link:hover .genre-top {
+      display: block;
+      border-radius: 0.8rem; }
