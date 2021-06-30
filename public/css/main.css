@@ -258,10 +258,12 @@ nav {
       display: block; } }
 
 .search__barWrapper {
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
 
 .search__bar {
   padding: 1rem;
+  margin: 0 1rem;
   width: 25rem;
   border: 1px solid #34323a;
   outline: none;
@@ -277,7 +279,7 @@ nav {
   .search__barIcon {
     width: 2rem;
     position: absolute;
-    right: 1rem;
+    right: 2rem;
     top: 0.7rem; }
     @media (max-width: 550px) {
       .search__barIcon {
@@ -295,12 +297,25 @@ nav {
       display: flex;
       background-color: #3a3a3a; } }
 
+.searchBtn-mobile {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  right: 2rem;
+  top: 0.7rem; }
+
 .search__barCloseMenu {
-  width: 2rem; }
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 .burger-menu {
   height: 5rem;
   width: 6rem;
+  cursor: pointer;
   margin-left: 1rem;
   display: flex;
   align-items: center;
