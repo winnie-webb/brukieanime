@@ -12,14 +12,15 @@
 
   <body>
     <%- include("../partials/header.ejs") %>
-
-    <section class="section-video">
-      <iframe allowfullscreen id="video-player" src=""></iframe>
-    </section>
-    <script>
-      window.onload = () => {
-        const iframe = document.getElementById("video-player");
-      };
-    </script>
+    <main>
+      <section class="section-video">
+        <iframe allowfullscreen id="video-player" src=""></iframe>
+        <div class="episodes">
+          <h2 class="episodes__heading">Episode List</h2>
+          <div class="episodes__tabWrapper"></div>
+          <ul class="episodes__wrapper"></ul>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

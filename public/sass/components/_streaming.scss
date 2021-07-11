@@ -1,15 +1,51 @@
+main {
+  padding: 2rem;
+}
 .section-video {
-  padding-bottom: 56.25%;
   width: 60%;
-  height: 60rem;
+  padding: 3rem;
+  background-color: #2d3436;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  @media (max-width: 750px) {
+    width: 100%;
+    margin: auto;
+  }
 }
 #video-player {
   width: 100%;
-  height: 100%;
-  border: none;
+  height: 50rem;
 }
-iframe:not(#video-player) {
-  display: none;
+.episodes {
+  &__tabWrapper {
+    margin-top: 2rem;
+
+    color: #fff;
+    & span {
+      padding-right: 1rem;
+    }
+  }
+  &__heading {
+    color: $secondary-color;
+    margin-top: 2rem;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    @media (max-width: 750px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__episode {
+    border-radius: 0.4rem;
+    padding: 1rem 2rem;
+    background-color: #130f40;
+    text-align: center;
+    cursor: pointer;
+  }
 }
 
 // iframe div[style] {

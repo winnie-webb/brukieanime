@@ -1,26 +1,37 @@
 const axios = require("axios").default;
 const { JSDOM } = require("jsdom");
 const getWatchStream = async (url) => {
-  const watchStreamRequest = await axios.get(url);
-  const dom = new JSDOM(watchStreamRequest.data);
+  try {
+    const watchStreamRequest = await axios.get(url);
+    const dom = new JSDOM(watchStreamRequest.data);
 
-  const videoStreamURL = dom.window.document
-    .querySelector(".anime_muti_link .anime a[data-video]")
-    .getAttribute("data-video");
+    const videoStreamURL = dom.window.document
+      .querySelector(".anime a")
+      .getAttribute("data-video");
 
-  let episodeList = [];
-  const episodeListHTML = dom.window.document.querySelectorAll(
-    "#episode_related li a .name"
-  );
-  episodeListHTML.forEach((episode) => {
-    episodeList.push("1");
-  });
-  const watchStream = {
-    videoStreamURL,
-    episodeList,
-  };
+    const episodeList =
+      dom.window.document.querySelectorAll("#episode_page li a");
+    // Episodes Start
+    const episodeStart = [];
+    episodeList.forEach((episode) => {
+      episodeStart.push(episode.getAttribute("ep_start"));
+    });
+    // Episodes End
+    const episodeEnd = [];
+    episodeList.forEach((episode) => {
+      episodeEnd.push(episode.getAttribute("ep_end"));
+    });
+    const episodeStartAndEnd = [[...episodeStart], [...episodeEnd]];
 
-  return watchStream;
+    const stream = {
+      videoStreamURL,
+      episodeStartAndEnd,
+    };
+
+    return stream;
+  } catch (err) {
+    console.log(err.message);
+  }
 };
 
 module.exports = getWatchStream;

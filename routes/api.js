@@ -49,9 +49,10 @@ router.get("/v1/watch/:animeNameAndEpisode", async (req, res) => {
   try {
     const animeNameAndEpisode = req.params.animeNameAndEpisode;
     const url = `${DB_URI2}${animeNameAndEpisode}`;
-    const watchStream = await getWatchStream(url);
-    res.send({ watchStream });
+    const stream = await getWatchStream(url);
+    res.send(stream);
   } catch (err) {
+    res.send({ err });
     console.error(err);
   }
 });
