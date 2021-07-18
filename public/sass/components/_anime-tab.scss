@@ -104,22 +104,3 @@
 .current-type {
   color: #2f3542 !important;
 }
-.loader {
-  border-top: 2px solid $main-color;
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  animation: load 0.6s infinite;
-  margin: 2rem auto;
-  position: absolute;
-  left: 50%;
-  top: 30%;
-}
-@keyframes load {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
