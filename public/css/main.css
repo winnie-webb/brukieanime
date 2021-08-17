@@ -56,9 +56,6 @@ code {
     .anime-tab__headingWrapper {
       flex-direction: column; } }
 
-.togglepage__wrapper {
-  margin-top: 1rem; }
-
 .anime-tab__animeTypes {
   display: flex; }
   .anime-tab__animeTypes h2 {
@@ -130,23 +127,6 @@ code {
 .current-type {
   color: #2f3542 !important; }
 
-.loader {
-  border-top: 2px solid #27ae60;
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  animation: load 0.6s infinite;
-  margin: 2rem auto;
-  position: absolute;
-  left: 50%;
-  top: 30%; }
-
-@keyframes load {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg); }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg); } }
-
 .sidebar-wrapper {
   display: flex;
   flex-direction: column; }
@@ -161,6 +141,7 @@ code {
 
 .widget-sidebar {
   padding: 1rem 2rem;
+  width: 35rem;
   margin-left: 1rem;
   border-radius: 0.8rem;
   background-color: #1b1f22; }
@@ -198,6 +179,24 @@ code {
   @media (max-width: 850px) {
     .home-widgets {
       flex-direction: column; } }
+
+.loader {
+  border-top: 2px solid #27ae60;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  animation: load 0.6s infinite;
+  margin: 2rem auto;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%); }
+
+@keyframes load {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg); } }
 
 .header {
   display: flex;
@@ -276,6 +275,8 @@ nav {
       display: none; } }
   .search__bar:focus {
     border: 1px solid #27ae60; }
+    .search__bar:focus ~ .search__contentWrapper {
+      display: flex; }
   .search__barIcon {
     width: 2rem;
     position: absolute;

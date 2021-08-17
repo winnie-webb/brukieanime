@@ -76,6 +76,9 @@ nav {
 
   &:focus {
     border: 1px solid $main-color;
+    & ~ .search__contentWrapper {
+      display: flex;
+    }
   }
 
   &Icon {
@@ -98,6 +101,7 @@ nav {
     background-color: rgb(58, 58, 58);
   }
 }
+
 .searchBtn-mobile {
   background-color: transparent;
   border: none;

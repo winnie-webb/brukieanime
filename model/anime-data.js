@@ -1,10 +1,9 @@
 const axios = require("axios").default;
 const { JSDOM } = require("jsdom");
-async function getData(url, page) {
+async function getData(url) {
   try {
     // Fetching data
-    const pageToFetch = `${url}?page=${page}`;
-    const animeDataRequest = await axios.get(pageToFetch);
+    const animeDataRequest = await axios.get(url);
     const base = `.film-list .item .inner`;
 
     let animeImages = [];

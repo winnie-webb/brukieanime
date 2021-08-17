@@ -4,7 +4,6 @@ const express = require("express");
 const router = express.Router();
 const getRecentReleases = require("../model/anime-data");
 const getWatchStream = require("../model/streaming");
-
 const { DB_URI, DB_URI2 } = process.env;
 
 router.get("/v1/updated", async (req, res) => {
@@ -12,8 +11,7 @@ router.get("/v1/updated", async (req, res) => {
     let pageQuery = req.query.page;
     if (!pageQuery) pageQuery = 1;
     const recentReleases = await getRecentReleases(
-      `${DB_URI}/updated`,
-      pageQuery
+      `${DB_URI}/updated?page=${pageQuery}`
     );
 
     res.send({ data: recentReleases });
@@ -26,7 +24,9 @@ router.get("/v1/newest", async (req, res) => {
     let pageQuery = req.query.page;
     if (!pageQuery) pageQuery = 1;
 
-    const newest = await getRecentReleases(`${DB_URI}/newest`, pageQuery);
+    const newest = await getRecentReleases(
+      `${DB_URI}/newest?page=${pageQuery}`
+    );
 
     res.send({ data: newest });
   } catch (err) {
@@ -55,5 +55,11 @@ router.get("/v1/watch/:animeNameAndEpisode", async (req, res) => {
     res.send({ err });
     console.error(err);
   }
+});
+router.get("/v1/search", async (req, res) => {
+  const keyword = req.query.keyword;
+  const url = `${DB_URI}/search?keyword=${keyword}`;
+  const searchAnimeData = await getRecentReleases(url);
+  res.json({ data: searchAnimeData });
 });
 module.exports = router;
