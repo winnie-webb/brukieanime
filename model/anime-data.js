@@ -30,6 +30,7 @@ async function getData(url) {
     );
 
     // Retrieving needed content
+    console.time("get");
     animeImagesHTML.forEach((image) => {
       animeImages.push(image.src);
     });
@@ -42,7 +43,7 @@ async function getData(url) {
     animeLinksHTML.forEach((link) => {
       animeLinks.push(link.href.slice(22));
     });
-
+    console.timeEnd("get");
     //  Returning data in object format
     const data = {
       animeImages,
@@ -52,6 +53,7 @@ async function getData(url) {
     };
     return data;
   } catch (err) {
+    console.log(err);
     return null;
   }
 }

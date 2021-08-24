@@ -20,11 +20,11 @@ const renderEpisodeList = (streamResponse) => {
     Array.from(Array(parseInt(episodeEnd[currentTab])), (_, i) => i + 1)
   );
 
-  episodesInTab.forEach((ep, index) => {
+  episodesInTab.forEach((ep) => {
     const episodeList = document.createElement("li");
     episodeList.classList.add("episodes__episode");
     episodeList.textContent = ep;
-    if (index === 0) episodeList.classList.add("current-episode");
+    episodeList.id = `episode-${ep}`;
     episodesWrapper.append(episodeList);
   });
 };

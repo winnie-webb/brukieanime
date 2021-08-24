@@ -52,8 +52,7 @@ router.get("/v1/watch/:animeNameAndEpisode", async (req, res) => {
     const stream = await getWatchStream(url);
     res.send(stream);
   } catch (err) {
-    res.send({ err });
-    console.error(err);
+    res.send(err);
   }
 });
 router.get("/v1/search", async (req, res) => {
