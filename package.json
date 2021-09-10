@@ -18,6 +18,7 @@
   "scripts": {
     "start": "node app.js",
     "devStart": "nodemon app.js",
+    "build": "npx webpack --config webpack.config.js --mode=production -w",
     "compile-sass-homepage": "node-sass ./public/sass/main.scss ./public/css/main.css -w",
     "compile-sass-watch": "node-sass ./public/sass/streaming.scss ./public/watch/css/streaming.css -w"
   },

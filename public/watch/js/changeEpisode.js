@@ -4,9 +4,9 @@ const changeEpisode = () => {
   const episodes = document.querySelectorAll(".episodes__episode");
   episodes.forEach((episode) => {
     episode.addEventListener("click", () => {
-      episodes.forEach((otherEpisode) => {
-        otherEpisode.classList.remove("current-episode");
-      });
+      const currentEpisode = document.querySelector(".current-episode");
+      if (currentEpisode) currentEpisode.classList.remove("current-episode");
+
       episode.classList.add("current-episode");
       renderVideo(parseInt(episode.textContent));
       localStorage.setItem(animeName, episode.textContent);

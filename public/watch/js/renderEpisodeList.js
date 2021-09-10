@@ -1,31 +1,41 @@
+import { generateEpisodes } from "./generateEpisodes.js";
 const renderEpisodeList = (streamResponse) => {
-  let currentTab = 0;
   const episodeStartAndEnd = streamResponse.episodeStartAndEnd;
+  // Please console.log(episodeStartAndEnd) to fully understand the values
   const episodeStart = episodeStartAndEnd[0];
   const episodeEnd = episodeStartAndEnd[1];
 
   const episodesWrapper = document.querySelector(".episodes__wrapper");
   const episodesTabWrapper = document.querySelector(".episodes__tabWrapper");
 
+  // !!!!
+  // Reminder - check which tab user is supposed to be
+  // !!!!
+
   //  Create Episode Tabs
-  episodeEnd.forEach((ep, index) => {
+  episodeEnd.forEach((currentTabEpisodeEnd, index) => {
     const episodeTab = document.createElement("span");
-    episodeTab.textContent = `${episodeStart[index]} - ${ep}`;
+    episodeTab.textContent = `${episodeStart[index]} - ${currentTabEpisodeEnd}`;
+    episodeTab.setAttribute("ep_start", episodeStart[index]);
+    episodeTab.setAttribute("ep_end", currentTabEpisodeEnd);
+    episodeTab.addEventListener("click", () => {
+      episodesWrapper.innerHTML = null;
+      const numberOfEpisodesToGenerate = parseInt(
+        episodeTab.getAttribute("ep_end")
+      );
+
+      const startEpisode = parseInt(episodeTab.getAttribute("ep_start"));
+      generateEpisodes(
+        startEpisode,
+        numberOfEpisodesToGenerate,
+        episodesWrapper
+      );
+    });
     episodesTabWrapper.append(episodeTab);
   });
-  // Create Episodes Tabs
-  Array.from({ length: 10 }, (_, i) => i + 1);
 
-  const episodesInTab = Array.from(
-    Array.from(Array(parseInt(episodeEnd[currentTab])), (_, i) => i + 1)
-  );
-
-  episodesInTab.forEach((ep) => {
-    const episodeList = document.createElement("li");
-    episodeList.classList.add("episodes__episode");
-    episodeList.textContent = ep;
-    episodeList.id = `episode-${ep}`;
-    episodesWrapper.append(episodeList);
-  });
+  // Create Episodes Tabs  c
+  const initialNumberOfEpisodes = parseInt(episodeEnd[0]);
+  generateEpisodes(1, initialNumberOfEpisodes, episodesWrapper);
 };
 export default renderEpisodeList;
