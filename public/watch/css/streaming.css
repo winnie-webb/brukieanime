@@ -107,6 +107,8 @@ nav {
       display: none; } }
   .search__bar:focus {
     border: 1px solid #27ae60; }
+    .search__bar:focus ~ .search__contentWrapper {
+      display: flex; }
   .search__barIcon {
     width: 2rem;
     position: absolute;
@@ -240,19 +242,16 @@ main {
 
 .episodes__wrapper {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   gap: 1rem;
   margin-top: 2rem; }
-  @media (max-width: 750px) {
-    .episodes__wrapper {
-      grid-template-columns: repeat(3, 1fr); } }
 
 .episodes__episode {
   border-radius: 0.4rem;
   padding: 1rem 2rem;
   text-align: center;
   cursor: pointer;
-  border: 1px solid; }
+  background-color: #95a5a6; }
 
 .current-episode {
   background-color: #ffa502 !important;
